@@ -11,8 +11,8 @@ public class GoodsService {
 //    @Autowired
 //    OrderService orderService;
 
-    @Autowired
-    JdbcTemplate jdbcTemplate;
+//    @Autowired
+//    JdbcTemplate jdbcTemplate;
 
 //    public GoodsService(OrderService orderService) {
 //        this.orderService = orderService;
@@ -24,7 +24,7 @@ public class GoodsService {
 
     @Transactional
     public void insert() {
-        jdbcTemplate.execute("insert into user(openid, nickname)" +
-                "values(222222,'zhangzhang')");
+//        jdbcTemplate.execute("insert into user(openid, nickname)" +
+//                "values(222222,'zhangzhang')");
     }
 }
