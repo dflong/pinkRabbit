@@ -43,6 +43,7 @@ public class _315 {
         return x & (- x);
     }
 
+    // 查找元素的idx
     private int getId(int x) {
         return Arrays.binarySearch(a, x) + 1;
     }
