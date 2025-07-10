@@ -9,27 +9,26 @@ public class _331 {
     }
 
     public boolean isValidSerialization(String preorder) {
-        String[] charArray = preorder.split(",");
-        for (int i = 0; i < charArray.length; i ++) {
-            // 当前节点
-            String cur = charArray[i];
-            // 左右子节点
-            if (Objects.equals(cur, "#")) { // 空节点，则不可能有子节点
-                if (2 * i + 1 < charArray.length) {
-                    return false;
-                }
+        int n = preorder.length();
+        int cnt = 1; // 防止起点误判
 
-                if (!Objects.equals(charArray[i * 2], "#") || !Objects.equals(charArray[i * 2 + 1], "#")) {
-                    return false;
-                }
+        for (int i = 0; i < n; i ++) {
+            if (cnt == 0) return false;
+            if (preorder.charAt(i) == '#') {
+                cnt --;
+            } else if (preorder.charAt(i) == ',') {
+
             } else {
-                if (2 * i + 1 >= charArray.length) { // 必须要有子节点
-                    return false;
+                // 数字可能是多位
+                while (i < n && preorder.charAt(i) != ',') {
+                    i ++;
                 }
+                i --;
+                cnt --;
+                cnt += 2;
             }
-            // 父节点一定不能是#
-            if (i != 0 && Objects.equals(charArray[i / 2], "#")) return false;
         }
-        return true;
+
+        return cnt == 0;
     }
 }

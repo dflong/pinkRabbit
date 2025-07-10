@@ -14,38 +14,29 @@ public class _332 {
         new _332().findItinerary(tickets);
     }
 
-    public List<String> findItinerary(List<List<String>> tickets) {
-        Collections.sort(tickets, (a, b) -> a.get(1).compareTo(b.get(1)));
+    Map<String, PriorityQueue<String>> ticketsMap = new HashMap<>();
+    List<String> res = new ArrayList<>();
 
-        this.used = new boolean[tickets.size()];
-        this.tickets = tickets;
-        res.add("JFK");
-        backTracking();
+    public List<String> findItinerary(List<List<String>> tickets) {
+        // 建图
+        for (List<String> ticket : tickets) {
+            String src = ticket.get(0);
+            String dest = ticket.get(1);
+            if (!ticketsMap.containsKey(src)) {
+                ticketsMap.put(src, new PriorityQueue<>());
+            }
+            ticketsMap.get(src).add(dest);
+        }
+        dfs("JFK");
+        Collections.reverse(res);
         return res;
     }
 
-    List<String> res = new LinkedList<>();
-    boolean[] used;
-    List<List<String>> tickets;
-
-    public boolean backTracking() {
-        if (res.size() == tickets.size() + 1) {
-            return true;
+    public void dfs(String ticket) {
+        while (ticketsMap.containsKey(ticket) && ticketsMap.get(ticket).size() > 0) {
+            String poll = ticketsMap.get(ticket).poll();// 走过一次
+            dfs(poll);
         }
-
-        for (int i = 0; i < tickets.size(); i++) {
-            if (!used[i] && tickets.get(i).get(0).equals(res.get(res.size() - 1))) {
-                res.add(tickets.get(i).get(1));
-                used[i] = true;
-                if (backTracking()){
-                    return true;
-                }
-
-//                res.remove(res.size() - 1);
-//                used[i] = false;
-            }
-        }
-
-        return false;
+        res.add(ticket);
     }
 }
