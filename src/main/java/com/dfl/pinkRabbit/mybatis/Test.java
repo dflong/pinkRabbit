@@ -2,6 +2,8 @@ package com.dfl.pinkRabbit.mybatis;
 
 import com.dfl.pinkRabbit.mybatis.config.AppConfig;
 import com.dfl.pinkRabbit.mybatis.service.UserService;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;

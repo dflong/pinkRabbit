@@ -11,20 +11,20 @@ import org.springframework.transaction.PlatformTransactionManager;
 import javax.sql.DataSource;
 
 @Configuration // 为了配合@bean
-@ComponentScan("com.dfl.pinkRabbit.spring")
+@ComponentScan("com.dfl.pinkRabbit.springmabatis")
 public class AppConfig {
 
-    @Bean
-    public JdbcTemplate jdbcTemplate() {
-        return new JdbcTemplate(dataSource());
-    }
-
-    @Bean
-    public PlatformTransactionManager transactionManager() {
-        DataSourceTransactionManager transactionManager = new DataSourceTransactionManager();
-        transactionManager.setDataSource(dataSource());
-        return transactionManager;
-    }
+//    @Bean
+//    public JdbcTemplate jdbcTemplate() {
+//        return new JdbcTemplate(dataSource());
+//    }
+//
+//    @Bean
+//    public PlatformTransactionManager transactionManager() {
+//        DataSourceTransactionManager transactionManager = new DataSourceTransactionManager();
+//        transactionManager.setDataSource(dataSource());
+//        return transactionManager;
+//    }
 
     @Bean
     public DataSource dataSource() {
