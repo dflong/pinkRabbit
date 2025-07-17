@@ -11,7 +11,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 import javax.sql.DataSource;
 
 @Configuration // 为了配合@bean
-@ComponentScan("com.dfl.pinkRabbit.springmabatis")
+@ComponentScan("com.dfl.pinkRabbit.spring")
 public class AppConfig {
 
 //    @Bean
@@ -26,14 +26,14 @@ public class AppConfig {
 //        return transactionManager;
 //    }
 
-    @Bean
-    public DataSource dataSource() {
-        DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/school_mall");
-        dataSource.setUsername("root");
-        dataSource.setPassword("123456");
-        return dataSource;
-    }
+//    @Bean
+//    public DataSource dataSource() {
+//        DriverManagerDataSource dataSource = new DriverManagerDataSource();
+//        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
+//        dataSource.setUrl("jdbc:mysql://localhost:3306/school_mall");
+//        dataSource.setUsername("root");
+//        dataSource.setPassword("123456");
+//        return dataSource;
+//    }
 
 }
