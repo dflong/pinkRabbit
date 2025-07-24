@@ -34,7 +34,7 @@ public class _403 {
 
         for (int i = - 1; i <= 1; i ++) {
             int next = stone + i + k;
-            if (next == stone) continue;
+            if (next == stone) continue; // 原地跳了
             if (set.contains(next)) {
                 boolean dfs = dfs(next, k + i);
                 cache.put(key, dfs);

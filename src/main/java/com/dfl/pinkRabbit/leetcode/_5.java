@@ -1,8 +1,11 @@
 package com.dfl.pinkRabbit.leetcode;
 
+import org.springframework.stereotype.Component;
+
 import java.util.HashMap;
 import java.util.Map;
 
+@Component
 public class _5 {
 
     public int[] twoSum(int[] nums, int target) {
