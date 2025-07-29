@@ -12,19 +12,27 @@ public class _413 {
         v.numberOfArithmeticSlices(new int[]{1,2,3,4});
         // 1,2,3
         // 2,3,4
-        // 3,4,5
-        // 4,5,6
-        // 1,3,5
-        // 2,4,6
         // 1,2,3,4
-        // 2,3,4,5
-        // 3,4,5,6
-        // 1,2,3,4,5
-        // 2,3,4,5,6
-        // 1,2,3,4,5,6
     }
 
     public int numberOfArithmeticSlices(int[] nums) {
+        int n = nums.length;
+        if (n < 3) return 0;
+
+        // 以i结尾的等差数列数量
+        int[] dp = new int[n];
+        int res = 0;
+
+        for (int i = 2; i < n; i ++) {
+            if (nums[i] - nums[i - 1] == nums[i - 1] - nums[i - 2]) {
+                dp[i] = dp[i - 1] + 1;
+                res += dp[i];
+            }
+        }
+        return res;
+    }
+
+    public int numberOfArithmeticSlices1(int[] nums) {
         this.nums = nums;
         dfs(0);
         return res;

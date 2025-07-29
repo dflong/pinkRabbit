@@ -3,8 +3,6 @@ package com.dfl.pinkRabbit.leetcode;
 public class _463 {
 
     public int islandPerimeter(int[][] grid) {
-        // 岛屿数量 * 4 - (岛屿数量 - 1) * 2
-
         for (int i = 0; i < grid.length; i ++) {
             for (int j = 0; j < grid[i].length; j ++) {
                 if (grid[i][j] == 1) {

@@ -74,6 +74,7 @@ public class LRUCache {
     public void put(int key, int value) {
         DLinkNode cur = map.get(key);
         if (cur == null) {
+            // 超出最大容量，移除尾元素
             if (map.size() == capacity) {
                 map.remove(tail.prev.key);
                 DLinkNode prev = tail.prev.prev;
@@ -96,6 +97,7 @@ public class LRUCache {
             map.put(key, cur);
         } else {
             cur.val = value;
+            // 头元素的下一个就是自己
             if (hair.next.key == key) {
                 return;
             }
