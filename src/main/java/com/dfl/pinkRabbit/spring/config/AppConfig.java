@@ -10,14 +10,14 @@ import org.springframework.transaction.PlatformTransactionManager;
 
 import javax.sql.DataSource;
 
-//@Component
+@Component
 //@Configuration // 为了配合@bean
 @ComponentScan("com.dfl.pinkRabbit.spring")
 @ComponentScans({
         @ComponentScan(basePackages = {"com.dfl.pinkRabbit.leetcode"}),
 })
-@ImportResource("classpath:applicationContext.xml") // 通过注解方式
-@Import(Man.class)
+//@ImportResource("classpath:applicationContext.xml") // 通过注解方式
+@Import({Man.class})
 public class AppConfig {
 
 //    @Bean

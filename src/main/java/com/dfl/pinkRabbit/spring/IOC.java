@@ -34,7 +34,7 @@ public class IOC implements ApplicationContextAware, BeanFactoryPostProcessor {
 //        System.out.println(aopTest2.getUsername());
 
         //        BeanFactory beanFactory;
-//        ApplicationContext ac = new ClassPathXmlApplicationContext("applicationContext.xml");
+        ApplicationContext ac = new ClassPathXmlApplicationContext("applicationContext.xml");
 //        A person = (A)ac.getBean("a");
 //        person.say();
 //        String id = person.applicationContext.getId();

@@ -1,12 +1,14 @@
-package com.dfl.pinkRabbit;
+package com.dfl.pinkRabbit.spring;
 
-import com.dfl.pinkRabbit.mybatis.context.DflongScanner;
+import com.dfl.pinkRabbit.spring.config.MyImportSelector;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.ImportResource;
 
 @SpringBootApplication
 @ImportResource("classpath:applicationContext.xml")
+@Import(MyImportSelector.class)
 //@EnableAspectJAutoProxy
 public class PinkRabbitApplication {
 
