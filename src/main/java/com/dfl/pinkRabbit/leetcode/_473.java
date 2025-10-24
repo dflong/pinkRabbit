@@ -4,6 +4,11 @@ import java.util.Arrays;
 
 public class _473 {
 
+    public static void main(String[] args) {
+        _473 v = new _473();
+        v.makesquare(new int[] {1,1,2,2,2});
+    }
+
     int sum  = 0, t = 0;
     public boolean makesquare(int[] matchsticks) {
         for (int i : matchsticks) {

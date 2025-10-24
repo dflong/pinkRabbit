@@ -40,7 +40,7 @@ public class _472 {
         Arrays.fill(dp, - 1);
         dp[0] = 0;
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i <= n; i++) {
             if (dp[i] == -1) {
                 continue;
             }
